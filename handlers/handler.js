@@ -39,4 +39,8 @@ router.get('/', async (req, res) => {
     }
   });
 
+  router.get('*', (req, res) => {
+    res.status(404).render('error', { message: 'Page not found' });
+  });
+
 module.exports = router;
