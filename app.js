@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const mongoConnection = require('./configs/mongoConnection');
-const indexRouter = require('./routes/index');
+const indexRouter = require('./handlers/handler');
 
 app.set('view engine', 'pug');
 
