@@ -1,0 +1,17 @@
+html
+  head
+    title User List
+  body
+    h1 User List
+    table
+      thead
+        tr
+          th Username
+          th Email
+          th Password
+      tbody
+        each user in users
+          tr
+            td= user.username
+            td= user.email
+            td= user.password
