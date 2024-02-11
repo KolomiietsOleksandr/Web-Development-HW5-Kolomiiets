@@ -39,6 +39,21 @@ router.get('/', async (req, res) => {
     }
   });
 
+  router.patch('/:id', async (req, res) => {
+    try {
+      const userId = req.params.id;
+      const updates = req.body; // Data to update
+      const options = { new: true }; // Return the modified document
+      const updatedUser = await User.findByIdAndUpdate(userId, updates, options); // Find user by ID and update
+      if (!updatedUser) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+      res.status(200).json(updatedUser); // Respond with the updated user
+    } catch (error) {
+      res.status(400).json({ message: error.message });
+    }
+  });
+
   router.get('*', (req, res) => {
     res.status(404).render('error', { message: 'Page not found' });
   });
