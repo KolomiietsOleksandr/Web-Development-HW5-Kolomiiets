@@ -1,6 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/userModel.js');
+const fs = require('fs');
+
+const documentationFilePath = 'documentation.json';
+const documentation = JSON.parse(fs.readFileSync(documentationFilePath, 'utf8'));
+
+router.get('/help', (req, res) => {
+  res.json(documentation);
+});
 
 router.get('/new', (req, res) => {
   res.render('createUser');
@@ -36,6 +44,47 @@ router.get('/', async (req, res) => {
       res.render('userDetail', { user });
     } catch (error) {
       res.status(500).json({ message: error.message });
+    }
+  });
+
+  router.patch('/:id', async (req, res) => {
+    try {
+      const userId = req.params.id;
+      const updates = req.body;
+      const options = { new: true };
+      const updatedUser = await User.findByIdAndUpdate(userId, updates, options);
+      if (!updatedUser) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+      res.status(200).json(updatedUser);
+    } catch (error) {
+      res.status(400).json({ message: error.message });
+    }
+  });
+
+  router.delete('/:id', async (req, res) => {
+    try {
+      const userId = req.params.id;
+      const deletedUser = await User.findByIdAndDelete(userId);
+      if (!deletedUser) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+      res.status(200).json({ message: 'User deleted successfully' });
+    } catch (error) {
+      res.status(400).json({ message: error.message });
+    }
+  });
+
+  router.put('/:id', async (req, res) => {
+    try {
+      const userId = req.params.id;
+      const updatedUser = await User.findByIdAndUpdate(userId, req.body, { new: true });
+      if (!updatedUser) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+      res.status(200).json(updatedUser);
+    } catch (error) {
+      res.status(400).json({ message: error.message });
     }
   });
 
