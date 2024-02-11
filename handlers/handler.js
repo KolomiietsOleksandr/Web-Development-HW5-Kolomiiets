@@ -1,6 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/userModel.js');
+const fs = require('fs');
+
+const documentationFilePath = 'documentation.json';
+const documentation = JSON.parse(fs.readFileSync(documentationFilePath, 'utf8'));
+
+router.get('/help', (req, res) => {
+  res.json(documentation);
+});
 
 router.get('/new', (req, res) => {
   res.render('createUser');
