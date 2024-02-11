@@ -42,13 +42,26 @@ router.get('/', async (req, res) => {
   router.patch('/:id', async (req, res) => {
     try {
       const userId = req.params.id;
-      const updates = req.body; // Data to update
-      const options = { new: true }; // Return the modified document
-      const updatedUser = await User.findByIdAndUpdate(userId, updates, options); // Find user by ID and update
+      const updates = req.body;
+      const options = { new: true };
+      const updatedUser = await User.findByIdAndUpdate(userId, updates, options);
       if (!updatedUser) {
         return res.status(404).json({ message: 'User not found' });
       }
-      res.status(200).json(updatedUser); // Respond with the updated user
+      res.status(200).json(updatedUser);
+    } catch (error) {
+      res.status(400).json({ message: error.message });
+    }
+  });
+
+  router.delete('/:id', async (req, res) => {
+    try {
+      const userId = req.params.id;
+      const deletedUser = await User.findByIdAndDelete(userId);
+      if (!deletedUser) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+      res.status(200).json({ message: 'User deleted successfully' });
     } catch (error) {
       res.status(400).json({ message: error.message });
     }
