@@ -67,6 +67,19 @@ router.get('/', async (req, res) => {
     }
   });
 
+  router.put('/:id', async (req, res) => {
+    try {
+      const userId = req.params.id;
+      const updatedUser = await User.findByIdAndUpdate(userId, req.body, { new: true });
+      if (!updatedUser) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+      res.status(200).json(updatedUser);
+    } catch (error) {
+      res.status(400).json({ message: error.message });
+    }
+  });
+
   router.get('*', (req, res) => {
     res.status(404).render('error', { message: 'Page not found' });
   });
