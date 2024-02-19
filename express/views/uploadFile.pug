@@ -6,7 +6,7 @@ block content
   if message
     p.message= message
 
-  form(action='/upload', method='post', enctype='multipart/form-data')
+  form(action='/converter/upload', method='post', enctype='multipart/form-data')
     input(type='file', name='file')
     h2 Supported Image Formats
     each format in imageFormats
