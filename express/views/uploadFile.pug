@@ -1,0 +1,16 @@
+html
+
+block content
+  h1 Upload File
+
+  if message
+    p.message= message
+
+  form(action='/converter/upload', method='post', enctype='multipart/form-data')
+    input(type='file', name='file')
+    h2 Supported Image Formats
+    each format in imageFormats
+      div
+        input(type='radio', name='imageFormat', value=format)
+        label= format
+    button(type='submit') Upload
