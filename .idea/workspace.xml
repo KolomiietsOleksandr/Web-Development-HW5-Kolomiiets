@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="347caefb-f219-402e-b100-a6b132ad3eb7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/express/handlers/handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/express/handlers/handler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/express/views/error.pug" beforeDir="false" afterPath="$PROJECT_DIR$/express/views/error.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/express/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/express/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/express/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/express/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/express/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/express/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/express/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/express/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/express/views/uploadFile.pug" beforeDir="false" afterPath="$PROJECT_DIR$/express/views/uploadFile.pug" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
