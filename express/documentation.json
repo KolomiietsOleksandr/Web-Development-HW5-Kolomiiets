@@ -1,69 +1,76 @@
 {
-    "endpoints": [
-      {
-        "method": "GET",
-        "path": "/",
-        "description": "Retrieve all users",
-        "usage": "Send a GET request to view all list of users.",
-        "example": "GET /"
-      },
-      {
-        "method": "GET",
-        "path": "/:id",
-        "description": "Retrieve a user by ID",
-        "usage": "Send a GET request to retrieve the details of a user by providing the user ID in the URL parameter.",
-        "example": "GET /123"
-      },
-      {
-        "method": "POST",
-        "path": "/new",
-        "description": "Create a new user",
-        "usage": "Send a POST request to create a new user by providing the user data in the request body.",
-        "example": "POST /new - and use PUG form"
-      },
-      {
-        "method": "PUT",
-        "path": "/:id",
-        "description": "Update a user by ID",
-        "usage": "Send a PUT request to update an existing user by providing the user ID in the URL parameter and the updated user data in the request body.",
-        "example": "In Postman, set body to 'raw' and provide the updated user data in JSON format, for example:",
-        "data": {
-          "username": "NewUsername",
-          "email": "newemail@example.com",
-          "password": "newpassword"
-        }
-      },
-      {
-        "method": "PATCH",
-        "path": "/:id",
-        "description": "Partially update a user by ID",
-        "usage": "Send a PATCH request to partially update an existing user by providing the user ID in the URL parameter and the fields to update in the request body.",
-        "example": "In Postman, set body to 'raw' and provide the updated user data in JSON format, for example:",
-        "data": {
-          "password": "newpassword"
-        }
-      },
-      {
-        "method": "DELETE",
-        "path": "/:id",
-        "description": "Delete a user by ID",
-        "usage": "Send a DELETE request to delete an existing user by providing the user ID in the URL parameter.",
-        "example": "DELETE /123"
-      },
-      {
-        "method": "GET",
-        "path": "/help",
-        "description": "Display API documentation",
-        "usage": "Send a GET request to display the documentation for all endpoints of the API.",
-        "example": "GET /help"
+  "endpoints": [
+    {
+      "method": "GET",
+      "path": "/",
+      "description": "Retrieve all users",
+      "usage": "Send a GET request to view all list of users.",
+      "example": "GET /"
+    },
+    {
+      "method": "GET",
+      "path": "/:id",
+      "description": "Retrieve a user by ID",
+      "usage": "Send a GET request to retrieve the details of a user by providing the user ID in the URL parameter.",
+      "example": "GET /123"
+    },
+    {
+      "method": "POST",
+      "path": "/new",
+      "description": "Create a new user",
+      "usage": "Send a POST request to create a new user by providing the user data in the request body.",
+      "example": "POST /new - and use PUG form"
+    },
+    {
+      "method": "PUT",
+      "path": "/:id",
+      "description": "Update a user by ID",
+      "usage": "Send a PUT request to update an existing user by providing the user ID in the URL parameter and the updated user data in the request body.",
+      "example": "In Postman, set body to 'raw' and provide the updated user data in JSON format, for example:",
+      "data": {
+        "username": "NewUsername",
+        "email": "newemail@example.com",
+        "password": "newpassword"
       }
-    ],
-    "alreadyCreatedUserIDs": [
-      "65bd6443d3b24ed3d06c484c",
-      "65bd644cd3b24ed3d06c484e",
-      "65bd645ed3b24ed3d06c4850",
-      "65c90af8337446c944533f8d",
-      "65c90bd0482edb3cfc7839c9",
-      "65c90bf2482edb3cfc7839cc"
-    ]
-  }
+    },
+    {
+      "method": "PATCH",
+      "path": "/:id",
+      "description": "Partially update a user by ID",
+      "usage": "Send a PATCH request to partially update an existing user by providing the user ID in the URL parameter and the fields to update in the request body.",
+      "example": "In Postman, set body to 'raw' and provide the updated user data in JSON format, for example:",
+      "data": {
+        "password": "newpassword"
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/:id",
+      "description": "Delete a user by ID",
+      "usage": "Send a DELETE request to delete an existing user by providing the user ID in the URL parameter.",
+      "example": "DELETE /123"
+    },
+    {
+      "method": "GET",
+      "path": "/help",
+      "description": "Display API documentation",
+      "usage": "Send a GET request to display the documentation for all endpoints of the API.",
+      "example": "GET /help"
+    },
+    {
+      "method": "WebSocket",
+      "path": "/",
+      "description": "WebSocket connection",
+      "usage": "Connect to the WebSocket server to establish a real-time bidirectional communication channel.",
+      "example": "ws://localhost:3000/"
+    }
+  ],
+  "alreadyCreatedUserIDs": [
+    "65bd6443d3b24ed3d06c484c",
+    "65bd644cd3b24ed3d06c484e",
+    "65bd645ed3b24ed3d06c4850",
+    "65c90af8337446c944533f8d",
+    "65c90bd0482edb3cfc7839c9",
+    "65c90bf2482edb3cfc7839cc"
+  ]
+}
